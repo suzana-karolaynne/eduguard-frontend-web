@@ -1,0 +1,192 @@
+/* ============================================================
+   App.css — Utilitários e Override de Tailwind classes
+   Garante que as classes usadas nas pages funcionem com tema claro
+   ============================================================ */
+
+/* ── Layout Utilities ── */
+.space-y-2 > * + * { margin-top: 0.5rem; }
+.space-y-3 > * + * { margin-top: 0.75rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.space-x-3 > * + * { margin-left: 0.75rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.grid { display: grid; }
+.flex-col { flex-direction: column; }
+.flex-grow { flex-grow: 1; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-shrink-0 { flex-shrink: 0; }
+.items-center { align-items: center; }
+.items-start { align-items: start; }
+.items-end { align-items: end; }
+.justify-between { justify-content: space-between; }
+.justify-end { justify-content: flex-end; }
+.justify-center { justify-content: center; }
+.w-full { width: 100%; }
+.w-fit { width: fit-content; }
+.max-w-md { max-width: 28rem; }
+
+/* ── Grid Utilities ── */
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .sm\:flex-row { flex-direction: row; }
+  .sm\:items-center { align-items: center; }
+  .sm\:mt-0 { margin-top: 0; }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .lg\:col-span-1 { grid-column: span 1; }
+  .lg\:col-span-2 { grid-column: span 2; }
+}
+
+/* ── Sizing ── */
+.h-8 { height: 2rem; }
+.w-8 { width: 2rem; }
+.h-12 { height: 3rem; }
+.w-12 { width: 3rem; }
+.h-16 { height: 4rem; }
+.w-16 { width: 4rem; }
+.h-fit { height: fit-content; }
+.h-full { height: 100%; }
+
+/* ── Spacing ── */
+.p-3 { padding: 0.75rem; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+.py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mr-2 { margin-right: 0.5rem; }
+.mr-3 { margin-right: 0.75rem; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+.pt-4 { padding-top: 1rem; }
+.pt-6 { padding-top: 1.5rem; }
+
+/* ── Typography ── */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-md { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
+.text-4xl { font-size: 2.25rem; }
+.text-center { text-align: center; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-heading { font-family: var(--font-heading); }
+.italic { font-style: italic; }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.whitespace-nowrap { white-space: nowrap; }
+.uppercase { text-transform: uppercase; }
+.tracking-wider { letter-spacing: 0.05em; }
+.line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* ── Colors (remapped for light theme) ── */
+.text-white { color: var(--text-primary); }
+.text-slate-300 { color: var(--text-secondary); }
+.text-slate-400 { color: var(--text-secondary); }
+.text-slate-500 { color: var(--text-muted); }
+.text-indigo-400 { color: var(--primary); }
+.text-emerald-400 { color: var(--success); }
+.text-emerald-500 { color: var(--success); }
+.text-amber-400 { color: var(--warning); }
+.text-amber-500 { color: var(--warning); }
+.text-red-400 { color: var(--danger); }
+.text-red-500 { color: var(--danger); }
+.text-pink-400 { color: #ec4899; }
+.text-pink-500 { color: #ec4899; }
+
+/* ── Backgrounds (remapped) ── */
+.bg-slate-700 { background-color: var(--surface-light); }
+.bg-slate-700\/30 { background-color: var(--surface-light); }
+.bg-slate-700\/50 { background-color: var(--surface-light); }
+.bg-slate-800 { background-color: var(--surface); }
+.bg-slate-800\/50 { background-color: var(--surface); }
+.bg-indigo-500\/10 { background-color: var(--primary-subtle); }
+.bg-indigo-500\/20 { background-color: var(--primary-subtle); }
+.bg-emerald-500\/10 { background-color: var(--success-bg); }
+.bg-emerald-600 { background-color: var(--success); }
+.bg-amber-500\/10 { background-color: var(--warning-bg); }
+.bg-red-500\/10 { background-color: var(--danger-bg); }
+.bg-transparent { background-color: transparent; }
+.bg-opacity-10 { opacity: 0.1; }
+
+/* ── Borders (remapped) ── */
+.border { border-width: 1px; border-style: solid; }
+.border-t { border-top: 1px solid var(--border); }
+.border-slate-600 { border-color: var(--border); }
+.border-slate-700 { border-color: var(--border); }
+.border-slate-700\/50 { border-color: var(--border); }
+.border-transparent { border-color: transparent; }
+.border-dashed { border-style: dashed; }
+.border-indigo-500\/50 { border-color: var(--primary); }
+.border-amber-500\/50 { border-color: var(--warning); }
+.border-red-500\/50 { border-color: var(--danger); }
+.divide-y > * + * { border-top: 1px solid var(--border); }
+
+/* ── Rounded ── */
+.rounded { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* ── Effects ── */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.overflow-hidden { overflow: hidden; }
+.overflow-x-auto { overflow-x: auto; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.col-span-full { grid-column: 1 / -1; }
+
+/* ── Interaction (remapped for light theme) ── */
+.transition-colors { transition: color 0.15s ease, background-color 0.15s ease; }
+.transition-opacity { transition: opacity 0.15s ease; }
+.cursor-pointer { cursor: pointer; }
+
+.hover\:bg-slate-700\/50:hover { background-color: var(--surface-light); }
+.hover\:bg-indigo-500\/10:hover { background-color: var(--primary-subtle); }
+.hover\:bg-indigo-500\/20:hover { background-color: var(--primary-subtle); }
+.hover\:bg-amber-500\/10:hover { background-color: var(--warning-bg); }
+.hover\:bg-emerald-700:hover { background-color: #047857; }
+.hover\:bg-slate-600:hover { background-color: var(--surface-dark); }
+.hover\:text-red-300:hover { color: #f87171; }
+.hover\:border-slate-600:hover { border-color: var(--border-hover); }
+.hover\:border-indigo-500\/50:hover { border-color: var(--primary); }
+.group:hover .group-hover\:opacity-20 { opacity: 0.2; }
+
+/* ── Animation ── */
+.animate-pulse { animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+/* ── Focus ── */
+.focus\:outline-none:focus { outline: none; }
+.focus\:ring-1:focus { box-shadow: 0 0 0 2px var(--primary-ring); }
+.focus\:ring-2:focus { box-shadow: 0 0 0 3px var(--primary-ring); }
+.outline-none { outline: none; }
+
+/* ── Misc used in pages ── */
+.placeholder-slate-500::placeholder { color: var(--text-muted); }
